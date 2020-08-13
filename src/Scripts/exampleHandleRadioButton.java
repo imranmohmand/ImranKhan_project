@@ -13,6 +13,9 @@ public class exampleHandleRadioButton {
 		System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
 		WebDriver driver=new ChromeDriver(); // Initialize the web_driver to interact wit the Chrome web page
 		driver.manage().window().maximize();//Maximize the window 
+		// also called "method chaining" in java means in one method output (driver)we are performing some other operation 
+		//means we can called multiple methods in a single line of code using method chaining concept in java 
+		
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);//implicit wait
 		driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);// wait for page full loaded 
 		
@@ -38,8 +41,12 @@ public class exampleHandleRadioButton {
 		
 		
 		
-		Thread.sleep(6000);//wait certain amout of time before closing the browser 
-		driver.quit();
+		Thread.sleep(6000);//wait certain amount of time before closing the browser 
+		driver.quit();//is a command which will terminate the browser instance 
+					// whatever the memory is allocated for the program  it will release that memory
+					// if we are not releasing  that memory at the end of the script 
+					// than after 5 or 6 execution you system performance will come down
+		//for this purpose we will be using quite command to release the memory 
 		
 	}
 
